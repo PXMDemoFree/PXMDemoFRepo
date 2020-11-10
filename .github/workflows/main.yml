@@ -27,12 +27,9 @@ jobs:
           fetch-depth: 0
 
       - if: endsWith(github.REF, '/master') == true
-        name: 'Run an analysis of the master branch'
-        env:
-          # to get access to secrets.SONAR_TOKEN, provide GITHUB_TOKEN
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: sonar-scanner
-          -Dsonar.host.url=https://sonar.pirobase.de
+        name: 'Run an analysis of the master branch'}
+        run: sudo sonar-scanner
+          -Dsonar.host.url=http://sonar.pirobase.de
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
           -Dsonar.scm.provider=git
