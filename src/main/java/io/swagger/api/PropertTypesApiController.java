@@ -45,6 +45,7 @@ public class PropertTypesApiController implements PropertTypesApi {
         // comment Xy Jenkins scan test
         // comment zzz test hotfix
         // test review
+        // test Son-Analyzer Workflow
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
