@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
 
       - if: endsWith(github.REF, '/master') == true
-        name: 'Run an analysis of the master branch'}
+        name: 'Run an analysis of the master branch'
         run: sudo sonar-scanner
           -Dsonar.host.url=http://sonar.pirobase.de
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
