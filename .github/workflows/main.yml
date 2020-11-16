@@ -5,7 +5,7 @@ name: Analyze branch
 # then define on which event, here a push
 on:
   push:
-    # and the target with some regex to match our specific  branch names
+    # and the target with some regex to match our specific  branch namesSCMSENSOR
     branches:
       - master
 
