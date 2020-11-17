@@ -42,6 +42,7 @@ public class PropertTypesApiController implements PropertTypesApi {
 ,@Min(0)@ApiParam(value = "number of records to skip for pagination", allowableValues = "") @Valid @RequestParam(value = "skip", required = false) Integer skip
 ,@Min(0) @Max(50) @ApiParam(value = "maximum number of records to return", allowableValues = "") @Valid @RequestParam(value = "limit", required = false) Integer limit
 ) {
+        // Jenkins Test
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
