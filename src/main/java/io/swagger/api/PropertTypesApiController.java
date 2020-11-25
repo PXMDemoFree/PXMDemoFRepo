@@ -44,6 +44,11 @@ public class PropertTypesApiController implements PropertTypesApi {
 ) {
         // Jenkins Test
         // Trigger SCM Poll
+        String xy = "hallo";
+        String zz = "hallo";
+        if(zz == xy){
+            System.out.println("upps");
+        }
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
