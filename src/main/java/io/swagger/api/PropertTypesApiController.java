@@ -19,31 +19,70 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
+
+import java.beans.EventHandler;
 import java.io.IOException;
+import java.io.ObjectStreamClass;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
+
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-10-29T14:51:08.605Z[GMT]")
 @Controller
 public class PropertTypesApiController implements PropertTypesApi {
-
+    
     private static final Logger log = LoggerFactory.getLogger(PropertTypesApiController.class);
-
+    
     private final ObjectMapper objectMapper;
-
+    
     private final HttpServletRequest request;
-
+    
     @org.springframework.beans.factory.annotation.Autowired
     public PropertTypesApiController(ObjectMapper objectMapper, HttpServletRequest request) {
         this.objectMapper = objectMapper;
         this.request = request;
     }
-
+    
     public ResponseEntity<List<PropertyTypesItem>> searchPropertyTypes(@ApiParam(value = "pass an optional search string for looking up propertyTypes") @Valid @RequestParam(value = "searchString", required = false) String searchString
-,@Min(0)@ApiParam(value = "number of records to skip for pagination", allowableValues = "") @Valid @RequestParam(value = "skip", required = false) Integer skip
-,@Min(0) @Max(50) @ApiParam(value = "maximum number of records to return", allowableValues = "") @Valid @RequestParam(value = "limit", required = false) Integer limit
-) {
+        ,@Min(0)@ApiParam(value = "number of records to skip for pagination", allowableValues = "") @Valid @RequestParam(value = "skip", required = false) Integer skip
+        ,@Min(0) @Max(50) @ApiParam(value = "maximum number of records to return", allowableValues = "") @Valid @RequestParam(value = "limit", required = false) Integer limit
+    ) {
         // Jenkins Test
-        // Trigger SCM Poll
+        // Trigger SCM Poll//
+        String xy = "hallo";
+        String zz = "hallo";
+        if(zz == xy){
+            System.out.println("upps");
+        } else if(zz == "sdsd"){
+            System.out.println("upps");
+        }
+        if(zz == xy){
+            System.out.println("upps");
+        }
+        if(zz == xy){
+            System.out.println("upps");
+        } else if(zz == "sdsd"){
+            System.out.println("upps");
+        }
+        if(zz == xy){
+            System.out.println("upps");
+        } else if(zz == "sdsd"){
+            System.out.println("upps");
+        }
+        if(zz == xy){
+            System.out.println("upps");
+        } else if(zz == "sdsd"){
+            System.out.println("upps");
+        }
+        
+        
+        zz = null;
+        zz.charAt(0);
+        
+        Stack repIds = new Stack();
+        Class parent = ObjectStreamClass.lookup(PropertTypesApiController.class).getClass();
+        
+        
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -53,8 +92,8 @@ public class PropertTypesApiController implements PropertTypesApi {
                 return new ResponseEntity<List<PropertyTypesItem>>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
-
+        
         return new ResponseEntity<List<PropertyTypesItem>>(HttpStatus.NOT_IMPLEMENTED);
     }
-
+    
 }
