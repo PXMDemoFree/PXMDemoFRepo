@@ -11,9 +11,9 @@ pipeline {
                        "-Dsonar.projectKey=API-Demo-gradle " +
                        "-Dsonar.host.url=https://sonar.pirobase.de " +
                        "-Dsonar.login=5ba45215d8aedddd06f5fe7f0b3797b300227959 " +
-                       "-Dsonar.pullrequest.key='${BRANCH_NAME}'" +
-                       "-Dsonar.pullrequest.branch='${CHANGE_BRANCH}'" +
-                       "-Dsonar.pullrequest.base=master "
+                       "-Dsonar.pullrequest.key='${BRANCH_NAME}' " +
+                       "-Dsonar.pullrequest.branch='${CHANGE_BRANCH}' " +
+                       "-Dsonar.pullrequest.base=master"
                 } else {
                     sh "./gradlew sonarqube " +
                        "-Dsonar.projectKey=API-Demo-gradle " +
