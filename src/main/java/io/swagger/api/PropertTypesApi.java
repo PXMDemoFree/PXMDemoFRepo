@@ -27,6 +27,7 @@ import java.util.Map;
 @Api(value = "propertTypes", description = "the propertTypes API")
 public interface PropertTypesApi {
 
+    // testPR
     @ApiOperation(value = "searches propertyTypes", nickname = "searchPropertyTypes", notes = "By passing in the appropriate options, you can search for available propertyTypes in the system ", response = PropertyTypesItem.class, responseContainer = "List", tags={ "developers", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "search results matching criteria", response = PropertyTypesItem.class, responseContainer = "List"),
