@@ -26,6 +26,11 @@ import java.io.ObjectStreamClass;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-10-29T14:51:08.605Z[GMT]")
 @Controller
@@ -78,10 +83,22 @@ public class PropertTypesApiController implements PropertTypesApi {
         
         zz = null;
         zz.charAt(0);
-        
-        Stack repIds = new Stack();
-        Class parent = ObjectStreamClass.lookup(PropertTypesApiController.class).getClass();
-        
+    
+        ThreadFactory threadFactory = Executors.defaultThreadFactory();
+        ThreadPoolExecutor executorPool = new ThreadPoolExecutor(3, 10, 5, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(2), threadFactory);
+    
+        for (int i = 0; i < 10; i++) {
+            executorPool.execute(new Thread("Job: " + i));
+        }
+    
+        String tabInside = "A	B";  // Noncompliant, contains a tabulation
+        String zeroWidthSpaceInside = "foo​bar"; // Noncompliant, it contains a U+200B character inside
+        char tab = '	';
+    
+        System.out.println(executorPool.getActiveCount()); // Compliant
+        executorPool.shutdown();
+    
+        if(getTrue() | getFalse()) { ... }
         
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
@@ -93,7 +110,14 @@ public class PropertTypesApiController implements PropertTypesApi {
             }
         }
         
+        
         return new ResponseEntity<List<PropertyTypesItem>>(HttpStatus.NOT_IMPLEMENTED);
+    }
+    
+    public void doSomething() {
+    }
+    
+    public void doSomethingElse() {
     }
     
 }
