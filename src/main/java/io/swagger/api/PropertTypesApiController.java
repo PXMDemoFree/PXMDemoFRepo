@@ -95,11 +95,8 @@ public class PropertTypesApiController implements PropertTypesApi {
         String zeroWidthSpaceInside = "foo​bar"; // Noncompliant, it contains a U+200B character inside
         char tab = '	';
     
-        System.out.println(executorPool.getActiveCount()); // Compliant
-        executorPool.shutdown();
+
     
-        if(getTrue() | getFalse()) { ... }
-        
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
