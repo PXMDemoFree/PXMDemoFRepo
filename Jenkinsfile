@@ -5,14 +5,12 @@ pipeline {
 
     stage('Pre'){
         steps{
-        if(env.BRANCH_NAME.startsWith('PR-')) {
-            def prNum = xx
-            echo prNum
-        }
-           echo env.GIT_BRANCH
-           echo env.BRANCH_NAME
-           echo env.PULL_REQUEST
-           echo env.PR
+            script{
+                if(env.BRANCH_NAME.startsWith('PR-')) {
+                    def prNum = xx
+                    echo prNum
+                }
+            }
         }
     }
 
