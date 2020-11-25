@@ -5,7 +5,7 @@ pipeline {
 
     stage('Pre'){
         steps{
-           echo env.GIT_BRANCH
+           echo env.GIT_BRANCHgit
            echo env.BRANCH_NAME
            if (env.BRANCH_NAME.startsWith('PR-')) {
                def prNum = env.BRANCH_NAME.replace(/^PR-/, '')
