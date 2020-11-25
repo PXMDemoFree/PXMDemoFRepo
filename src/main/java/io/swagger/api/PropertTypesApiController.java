@@ -49,6 +49,9 @@ public class PropertTypesApiController implements PropertTypesApi {
         if(zz == xy){
             System.out.println("upps");
         }
+        if(zz == xy){
+            System.out.println("upps");
+        }
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
