@@ -43,7 +43,12 @@ public class PropertTypesApiController implements PropertTypesApi {
 ,@Min(0) @Max(50) @ApiParam(value = "maximum number of records to return", allowableValues = "") @Valid @RequestParam(value = "limit", required = false) Integer limit
 ) {
         // Jenkins Test
-        // Trigger SCM Poll
+        // Trigger SCM Poll//
+        String xy = "hallo";
+        String zz = "hallo";
+        if(zz == xy){
+            System.out.println("upps");
+        }
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
