@@ -8,7 +8,6 @@ pipeline {
             script{
                 if(env.BRANCH_NAME.startsWith('PR-')) {
                     def prNum = env.BRANCH_NAME.replace(/^PR-/, '')
-                    echo prNum
                 }
             }
         }
@@ -20,6 +19,13 @@ pipeline {
         sh './gradlew clean build'
       }
     }
+
+    stage('Build') {
+      steps {
+        echo prNum
+      }
+    }
+
 
 //     stage('Source Code Analysis') {
 //         sh "./gradlew sonarqube " +
