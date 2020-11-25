@@ -6,6 +6,7 @@ plugins {
     id 'java'
     id 'maven-publish'
     id "org.sonarqube" version "2.7"
+    id "com.github.johnrengelman.shadow" version "6.1.0"
 }
 
 repositories {
@@ -46,6 +47,14 @@ tasks.withType(JavaCompile) {
 sonarqube {
     properties {
         property "sonar.sourceEncoding", "UTF-8"
-        property "sonar.projectKey", "Github-Analyzer"
+        property "sonar.projectKey", "API-Demo-gradle"
+        property "sonar.host.url", "https://sonar.pirobase.de"
+        property "sonar.login", "5ba45215d8aedddd06f5fe7f0b3797b300227959"
+    }
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'io.swagger.Swagger2SpringBoot'
     }
 }
