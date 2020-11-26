@@ -1,27 +1,27 @@
 package io.swagger.api;
 
-import io.swagger.model.PropertyTypesItem;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import io.swagger.annotations.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.constraints.*;
-import javax.validation.Valid;
-import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.swagger.annotations.ApiParam;
+import io.swagger.model.PropertyTypesItem;
+
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-10-29T14:51:08.605Z[GMT]")
 @Controller
 public class PropertTypesApiController implements PropertTypesApi {
@@ -49,6 +49,18 @@ public class PropertTypesApiController implements PropertTypesApi {
         if(zz == xy){
             System.out.println("upps");
         }
+    
+        //bug2Test
+        List<String> newList = new ArrayList<>();
+        assert newList.remove(newList.get(0));
+    
+        //bug1Test
+        int target = -5;
+        int num = 3;
+        target =- num;  // Noncompliant; target = -3. Is that really what's meant?
+        target =+ num; // Noncompliant; target = 3
+        
+        
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
