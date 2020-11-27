@@ -28,6 +28,10 @@ public class Swagger2SpringBoot implements CommandLineRunner {
         if (codeSmellTwo.endsWith("abc")){
             int result = codeSmellThree.compareTo(codeSmellTwo);
         }
+        if (codeSmellThree.endsWith("abc")){
+            int result = codeSmellThree.compareTo(codeSmellTwo);
+        }
+        
         System.out.println("Hello PXM!");
         
     }
