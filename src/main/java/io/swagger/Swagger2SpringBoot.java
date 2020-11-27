@@ -26,7 +26,7 @@ public class Swagger2SpringBoot implements CommandLineRunner {
         String codeSmellTwo = null;
         String codeSmellThree = null;
         String codeSmellFour = null;
-        if (codeSmellTwo.endsWith("abc")){
+        if (codeSmellFour.endsWith("abc")){
             int result = codeSmellThree.compareTo(codeSmellTwo);
         }
         if (codeSmellThree.endsWith("abc")){
