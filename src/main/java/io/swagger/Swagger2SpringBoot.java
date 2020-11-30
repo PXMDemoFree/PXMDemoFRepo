@@ -24,8 +24,10 @@ public class Swagger2SpringBoot implements CommandLineRunner {
         new SpringApplication(Swagger2SpringBoot.class).run(args);
         
         String badString = null;
-        int result = badString.compareTo("abc");
-        System.out.println("Hello PXM!");
+        if(badString.endsWith("abc")) {
+            int result = badString.compareTo("Hello");
+        }
+        
     }
 
     class ExitException extends RuntimeException implements ExitCodeGenerator {
