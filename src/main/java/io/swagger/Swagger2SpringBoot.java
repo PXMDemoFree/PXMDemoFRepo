@@ -22,7 +22,7 @@ public class Swagger2SpringBoot implements CommandLineRunner {
 
     // comment
     public static void main(String[] args) throws Exception {
-        String notgood = null;
+        String notgood = "what";
         int result = notgood.compareTo("abc");
         new SpringApplication(Swagger2SpringBoot.class).run(args);
     }
