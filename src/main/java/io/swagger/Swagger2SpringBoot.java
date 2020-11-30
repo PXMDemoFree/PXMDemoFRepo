@@ -27,8 +27,6 @@ public class Swagger2SpringBoot implements CommandLineRunner {
         if (codeSmellIchi.endsWith("abc")){
             int result = codeSmellIchi.compareTo(codeSmellTwo);
         }
-
-        
     }
 
     class ExitException extends RuntimeException implements ExitCodeGenerator {
