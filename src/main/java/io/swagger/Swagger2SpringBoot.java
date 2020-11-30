@@ -22,23 +22,6 @@ public class Swagger2SpringBoot implements CommandLineRunner {
 
     public static void main(String[] args) throws Exception {
         new SpringApplication(Swagger2SpringBoot.class).run(args);
-        String codeSmell = "A B";
-        String codeSmellTwo = null;
-        String codeSmellThree = null;
-        String codeSmellFour = null;
-        String codeSmellFive = null;
-        if (codeSmellTwo.endsWith("abc")){
-            int result = codeSmellThree.compareTo(codeSmellTwo);
-        }
-        if (codeSmellThree.endsWith("abc")){
-            int result = codeSmellThree.compareTo(codeSmellTwo);
-        }
-        if (codeSmellFour.startsWith("abc")){
-            int result = codeSmellThree.compareTo(codeSmellTwo);
-        }
-        if (codeSmellFive.startsWith("xxx")){
-            int result = codeSmellThree.compareTo(codeSmellTwo);
-        }
     }
 
     class ExitException extends RuntimeException implements ExitCodeGenerator {
