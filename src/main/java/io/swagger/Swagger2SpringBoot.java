@@ -22,6 +22,10 @@ public class Swagger2SpringBoot implements CommandLineRunner {
 
     public static void main(String[] args) throws Exception {
         new SpringApplication(Swagger2SpringBoot.class).run(args);
+        
+        String badString = null;
+        int result = badString.compareTo("abc");
+        System.out.println("Hello PXM!");
     }
 
     class ExitException extends RuntimeException implements ExitCodeGenerator {
