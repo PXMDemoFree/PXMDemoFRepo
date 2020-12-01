@@ -20,6 +20,7 @@ public class Swagger2SpringBoot implements CommandLineRunner {
         }
     }
 
+    // comment
     public static void main(String[] args) throws Exception {
         String xy = null;
         int res= xy.compareTo("W");
