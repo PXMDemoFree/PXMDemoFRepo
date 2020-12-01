@@ -22,7 +22,9 @@ public class Swagger2SpringBoot implements CommandLineRunner {
 
     // comment
     public static void main(String[] args) throws Exception {
-        String review = "Hallo";
+        String review = null;
+        int result = review.compareTo("PXM");
+        
         new SpringApplication(Swagger2SpringBoot.class).run(args);
     }
 
