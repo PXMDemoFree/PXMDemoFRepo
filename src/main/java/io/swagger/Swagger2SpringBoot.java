@@ -22,8 +22,8 @@ public class Swagger2SpringBoot implements CommandLineRunner {
 
     // comment
     public static void main(String[] args) throws Exception {
-        String c = null;
-        int x = c.compareTo("nkjN");
+        String c = "dssd";
+        int x = c.compareTo("nkjdddN");
         
         new SpringApplication(Swagger2SpringBoot.class).run(args);
     }
